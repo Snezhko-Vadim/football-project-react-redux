@@ -91,7 +91,7 @@ const fetchMatchesError = (error:any) => {
 function fetchStandings(competitionId:number){
     return (dispatch:Dispatch<IAction>) => {
         dispatch(fetchStandingsRequested())
-        return request(`http://api.football-data.org/v2/competitions/${competitionId}/standings`,'7d9c12f5860048e2b3a48176691a5ece')
+        return request(`https://api.football-data.org/v2/competitions/${competitionId}/standings`,'7d9c12f5860048e2b3a48176691a5ece')
         .then(response => dispatch(fetchStandingsLoaded(response)),error => dispatch(fetchStandingsError(error)))
     }
 }
@@ -100,7 +100,7 @@ function fetchCompetitions(){
     return (dispatch:Dispatch<IAction>) => {
         const availableCompetitions = [2000,2001,2002,2003,2013,2014,2015,2016,2017,2018,2019,2021];
             dispatch(fetchCompetitionsRequested());
-            return request('http://api.football-data.org/v2/competitions/','7d9c12f5860048e2b3a48176691a5ece')
+            return request('https://api.football-data.org/v2/competitions/','7d9c12f5860048e2b3a48176691a5ece')
             .then((response)=>{
                 let availableCompetitionsArray = [];
                 for(let i = 0; i < availableCompetitions.length; i++){
@@ -117,7 +117,7 @@ function fetchCompetitions(){
 function fetchTeam(teamId: number){
     return (dispatch:Dispatch<IAction>) => {
         dispatch(fetchTeamRequested())
-        return request(`http://api.football-data.org/v2/teams/${teamId}`,'7d9c12f5860048e2b3a48176691a5ece')
+        return request(`https://api.football-data.org/v2/teams/${teamId}`,'7d9c12f5860048e2b3a48176691a5ece')
         .then(response => dispatch(fetchTeamLoaded(response)),error => dispatch(fetchTeamError(error)))
     }
 }
@@ -125,7 +125,7 @@ function fetchTeam(teamId: number){
 function fetchMatches(teamId: number){
     return (dispatch: Dispatch<IAction>) => {
         dispatch(fetchMatchesRequested())
-        return request(`http://api.football-data.org/v2/teams/${teamId}/matches/`,'7d9c12f5860048e2b3a48176691a5ece')
+        return request(`https://api.football-data.org/v2/teams/${teamId}/matches/`,'7d9c12f5860048e2b3a48176691a5ece')
         .then(response => dispatch(fetchMatchesLoaded(response)),error => dispatch(fetchMatchesError(error)))
     }
 }
