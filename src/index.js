@@ -13,7 +13,7 @@ import {PersistGate} from 'redux-persist/integration/react'
 ReactDOM.render(
   <Provider store = {store}>
     <ErrorBoundry>
-      <Router>
+      <Router basename = '/football-project-react-redux/'>
         <PersistGate persistor = {persistor}>
           <div className = 'parallax'></div>
           <App/>
