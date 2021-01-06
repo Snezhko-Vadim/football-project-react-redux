@@ -5,7 +5,7 @@ import {addToFavoritesTeams, fetchMatches,fetchTeam} from '../../actions'
 import {appStateType} from '../../store'
 
 import TeamMatches from './team-matches'
-import TeamInformation from './team-information'
+import TeamInfo from './team-info'
 import Preloader from '../preloader'
 import ErrorIndecator from '../error-indecator'
 import AddToFavorites from '../addToFavorites'
@@ -69,7 +69,7 @@ const Team: React.FC<Team> = ({matches,
                 <h2 className = 'team__title-text'>{team.name}</h2>
             </div>
             <div className = 'team__content'>
-                <TeamInformation team = {team}/>
+                <TeamInfo team = {team}/>
                 <TeamMatches matches = {matches.matches}/>
             </div>
         </div>

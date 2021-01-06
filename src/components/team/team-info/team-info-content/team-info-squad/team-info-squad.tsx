@@ -1,14 +1,14 @@
 import React from 'react'
-import TeamInformationSquadItem from './team-information-squad-item'
+import TeamInfoSquadItem from './team-info-squad-item'
 import {IPlayer} from '../../../../../types/types'
 
-const TeamInformationSquad:React.FC<{squad:Array<IPlayer>}> = ({squad}) => {
+const TeamInfoSquad:React.FC<{squad:Array<IPlayer>}> = ({squad}) => {
     return(
         <div className = 'team__information-squad'>
             {
                 squad.map((squadItem) => {
                     if(squadItem.role === 'PLAYER'){
-                        return <TeamInformationSquadItem key = {squadItem.id} squadItem = {squadItem}/>
+                        return <TeamInfoSquadItem key = {squadItem.id} squadItem = {squadItem}/>
                     }
                 })
             }
@@ -16,4 +16,4 @@ const TeamInformationSquad:React.FC<{squad:Array<IPlayer>}> = ({squad}) => {
     )
 }
 
-export default TeamInformationSquad
+export default TeamInfoSquad

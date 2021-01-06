@@ -1,6 +1,6 @@
 import React from 'react'
-import TeamInformationListItem from './team-information-list-item'
-import TeamInformationSquad from './team-information-squad'
+import TeamInfoListItem from './team-information-list-item'
+import TeamInfoSquad from './team-info-squad'
 import {ITeam} from '../../../../types/types'
 
 const TeamInformationContent:React.FC<{team:ITeam}> = ({team}) => {
@@ -11,7 +11,7 @@ const TeamInformationContent:React.FC<{team:ITeam}> = ({team}) => {
                 <ul className = 'team__information-list'>
                     {
                         team.activeCompetitions.map((comp,index) => {
-                            return <TeamInformationListItem key = {index} nameOfCompetition = {comp.name}/>
+                            return <TeamInfoListItem key = {index} nameOfCompetition = {comp.name}/>
                         })
                     }
                 </ul>
@@ -38,7 +38,7 @@ const TeamInformationContent:React.FC<{team:ITeam}> = ({team}) => {
             </div>
             <div className = 'team__information-item'>
                 <p className = 'team__information-name'>squad:</p>
-                <TeamInformationSquad squad = {team.squad}/>
+                <TeamInfoSquad squad = {team.squad}/>
             </div>
         </div>
     )

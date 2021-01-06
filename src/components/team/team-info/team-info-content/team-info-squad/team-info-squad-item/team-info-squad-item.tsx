@@ -6,12 +6,12 @@ import AddToFavorites from '../../../../../addToFavorites'
 import {IPlayer} from '../../../../../../types/types'
 import { Dispatch } from 'react'
 
-interface TeamInformationSquadItemProps{
+interface TeamInfoSquadItemProps{
     squadItem: IPlayer,
     onAddToFavoritesPlayers: (player:IPlayer) => void,
 }
 
-const TeamInformationSquadItem:React.FC<TeamInformationSquadItemProps> = ({squadItem,onAddToFavoritesPlayers}) => {
+const TeamInfoSquadItem:React.FC<TeamInfoSquadItemProps> = ({squadItem,onAddToFavoritesPlayers}) => {
     return(
         <div className = 'team__information-squad-item'>
             <AddToFavorites onAddAction = {() => onAddToFavoritesPlayers(squadItem)}/>
@@ -37,4 +37,4 @@ const mapDispatchToProps = ((dispatch: Dispatch<any>)=>{
     }
 })
 
-export default connect(null, mapDispatchToProps)(TeamInformationSquadItem)
+export default connect(null, mapDispatchToProps)(TeamInfoSquadItem)
